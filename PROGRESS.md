@@ -29,6 +29,13 @@
   - Sıfır gölge (`box-shadow: none`), 1px hairline sınırlar, pill butonlar ve rozetler.
   - GSAP animasyonları (power2.out, prefers-reduced-motion koruması).
   - WCAG 2.2 AA kontrast ve klavye focus-visible halkası.
+- [x] **Kullanıcı Yönetimi, Giriş & Şifre Hatırlatma:**
+  - Kullanıcı kaydı (Ad Soyad, İşletme Adı, Şehir, İletişim, Şifre).
+  - Kullanıcı girişi ve Demo Yetiştirici (142 başlık Gökçeçayır sürüsü) ile tek tıkla oturum açma.
+  - Şifremi Unuttum (SMS/E-posta doğrulama kodu ve şifre yenileme akışı).
+  - Çok kiracılı (multi-tenant) yerel veri izolasyonu ve profil yönetimi.
+- [x] **Detaylı Çiftçi Saha Kullanım Kılavuzu:**
+  - Hem `docs/KULLANIM_KILAVUZU.md` dokümanında hem uygulama içi `viewGuide` sekmesinde adım adım, yalın Türkçe rehber.
 - [x] **PWA Kurulabilirlik & Çevrimdışı Mod:**
   - `manifest.json`, `sw.js` (tam önbelleğe alma), çevrimdışı durum göstergesi.
   - Dokunma hedefleri ≥44px, safe-area inset desteği.

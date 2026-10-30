@@ -746,8 +746,15 @@
             </div>
 
             <!-- Sidebar Footer -->
-            <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px;">
-                <div style="font-size: 0.72rem; color: var(--text-muted); line-height: 1.4;">
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                    <div>
+                        <div style="font-weight:700; font-size:0.84rem; color:var(--text-primary);" id="sideUserName">Murat Erman</div>
+                        <div style="font-size:0.7rem; color:var(--text-muted);" id="sideFarmName">Gökçeçayır İşletmesi</div>
+                    </div>
+                    <button class="btn-pill btn-secondary btn-sm" id="btnSideAuth" onclick="openAuthModal('login')" style="padding:3px 9px; min-height:28px; font-size:0.72rem;">Hesap</button>
+                </div>
+                <div style="font-size: 0.68rem; color: var(--text-muted); line-height: 1.4;">
                     <p><strong>Sensörler:</strong> 44.1 kHz Mic • 50 Hz IMU</p>
                     <p><strong>AI Modeli:</strong> Gemini 3.1 Pro Vision</p>
                     <p><strong>Durum:</strong> 100% Çevrimdışı Hazır</p>
@@ -762,17 +769,21 @@
             <!-- App Top Header Bar -->
             <header class="app-topbar">
                 <div class="farm-header">
-                    <div class="eyebrow">// GEBELİK ÖN TARAMA & SÜRÜ YÖNETİM SİSTEMİ</div>
+                    <div class="eyebrow" id="topbarEyebrow">// GEBELİK ÖN TARAMA & SÜRÜ YÖNETİM SİSTEMİ</div>
                     <h1 id="topbarTitle">Gökçeçayır Damızlık İşletmesi</h1>
-                    <p>Ankara / Haymana • Harici Prob Gerektirmeyen Dahili Sensör Mimarisi</p>
+                    <p id="topbarSubtitle">Ankara / Haymana • Harici Prob Gerektirmeyen Dahili Sensör Mimarisi</p>
                 </div>
 
-                <div style="display: flex; gap: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div id="userProfileBar" style="display:flex; align-items:center; gap:6px;">
+                        <span class="badge badge-neutral" id="lblUserBadge" style="cursor:pointer;" onclick="openAuthModal('login')">👤 Murat Erman</span>
+                        <button class="btn-pill btn-secondary btn-sm" id="btnLogout" onclick="logoutUser()" style="padding:4px 10px; min-height:32px; font-size:0.75rem;">Çıkış</button>
+                    </div>
                     <button class="btn-pill btn-secondary btn-sm" id="btnInstallPwa" onclick="installPWA()" style="display:none;">
-                        <span>📲 Uygulamayı Yükle</span>
+                        <span>📲 Yükle</span>
                     </button>
                     <button class="btn-pill btn-secondary btn-sm" onclick="exportFlockCSV()">
-                        <span>📥 CSV İndir</span>
+                        <span>📥 CSV</span>
                     </button>
                 </div>
             </header>
@@ -1275,31 +1286,91 @@
             </section>
 
             <!-- ==================================================================
-                 VIEW 8: SAHA KILAVUZU
+                 VIEW 8: SAHA KILAVUZU (DETAYLI ÇİFTÇİ REHBERİ)
                  ================================================================== -->
             <section class="view-section" id="viewGuide">
                 <div class="eyebrow">// RESMİ SAHA VE OPERASYON REHBERİ</div>
-                <h2 style="font-size: 1.55rem; margin-bottom: 14px;">Çiftçi ve Yetiştirici Kullanım Kılavuzu</h2>
+                <h2 style="font-size: 1.55rem; margin-bottom: 14px;">Çiftçi ve Yetiştirici Kullanım Kılavuzu 🐑📱</h2>
 
-                <div class="editorial-panel" style="margin-bottom: 16px; border-left: 3px solid var(--status-alert-text);">
-                    <div style="font-weight:700; color:var(--status-alert-text); font-size:0.86rem; margin-bottom:4px;">⚠️ YASAL VE TIBBİ UYARI</div>
+                <!-- Yasal Uyarı Kutusu -->
+                <div class="editorial-panel" style="margin-bottom: 16px; border-left: 3px solid var(--status-alert-text); background: var(--status-alert-bg);">
+                    <div style="font-weight:700; color:var(--status-alert-text); font-size:0.86rem; margin-bottom:4px;">⚠️ EN BAŞTA BİLİNMESİ GEREKEN ÇOK ÖNEMLİ KURAL</div>
                     <p style="font-size:0.78rem; color:var(--text-secondary); line-height:1.45;">
-                        Bu uygulama <strong>kesinlikle bir veteriner hekim ultrason cihazı veya kan tahlili DEĞİLDİR</strong>. Harici ultrason probu gerektirmeksizin telefon sensörleri ve multimodal AI ile risk sıralaması yapan bir <strong>ÖN ELEME VE KARAR DESTEK ARACIDIR</strong>.
+                        Bu uygulama <strong>kesinlikle bir veteriner hekim ultrason cihazı veya kan tahlili DEĞİLDİR</strong>. Harici prob gerektirmeksizin cebinizdeki telefonun dahili mikrofonu ve ivmeölçeriyle çalışan bir <strong>ÖN ELEME VE KARAR DESTEK ARACIDIR</strong>.
+                    </p>
+                    <p style="font-size:0.74rem; color:var(--status-alert-text); font-weight:700; margin-top:4px;">
+                        ⛔ Asla sadece bu uygulamaya güvenerek bir koyunu "kesin boş" diye kesime göndermeyiniz veya "kesin gebe" diyerek veteriner muayenesinden vazgeçmeyiniz!
                     </p>
                 </div>
 
-                <div class="editorial-panel" style="display:flex; flex-direction:column; gap:16px;">
+                <div class="editorial-panel" style="display:flex; flex-direction:column; gap:20px;">
+                    <!-- 1. Giriş ve Kayıt -->
                     <div>
-                        <div class="eyebrow">// 1. GEBELİK ÖN TARAMASI NASIL YAPILIR?</div>
-                        <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.45;">
-                            Koyunun tohumlama tarihinden itibaren en az 25 gün geçmiş olmalıdır. Telefonun mikrofonunu koyunun sol açlık çukuru (işkembe) ve göğüs hizasına 20-30 cm mesafede tutarak 30 saniye boyunca sabit bekleyiniz. Sistem 17 günlük östrus siklusu, geviş ritmi ve hareket indeksini harmanlayarak gebelik olasılığı üretir.
-                        </p>
+                        <div class="eyebrow">// 1. KULLANICI KAYDI, GİRİŞ VE ŞİFRE HATIRLATMA</div>
+                        <h3 style="font-size:1.15rem; margin-bottom:6px;">Uygulamaya Giriş ve İşletme Yönetimi</h3>
+                        <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.5;">
+                            <p>• <strong>Demo Hesabı ile Hızlı Giriş:</strong> Şifre hatırlamakla uğraşmadan hemen denemek için giriş ekranındaki <em>"🚀 Demo Hesabı ile Tek Tıkla Giriş Yap"</em> butonuna basınız. 142 koyunluk hazır Gökçeçayır sürüsüyle tüm özellikleri hemen test edebilirsiniz.</p>
+                            <p style="margin-top:4px;">• <strong>Kendi Çiftliğiniz İçin Kayıt:</strong> <em>"Yeni Çiftçi Kaydı"</em> sekmesinden adınızı, çiftlik adınızı (Örn: Bozkır Çiftliği) ve telefonunuzu yazarak saniyeler içinde kendi bağımsız sürü alanınızı açabilirsiniz.</p>
+                            <p style="margin-top:4px;">• <strong>Şifremi Unuttum:</strong> Şifrenizi unutursanız <em>"Şifremi Unuttum?"</em> butonuna basıp kayıtlı numaranıza gelen 4 haneli doğrulama koduyla yeni şifrenizi hemen belirleyebilirsiniz.</p>
+                        </div>
                     </div>
-                    <div style="border-top:1px solid var(--border-subtle); padding-top:10px;">
-                        <div class="eyebrow">// 2. FOTOĞRAFTAN AI KONDİSYON (BCS) ANALİZİ NASIL YAPILIR?</div>
-                        <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.45;">
-                            Koyunun yan ve hafif çapraz arka açısından (omurga lumbosakral çıkıntısı ve böğür boşluğu görünecek şekilde) 1.5 - 2 metre mesafeden net bir fotoğraf çekiniz. AI modeli 1.0 - 5.0 skalasında BCS kondisyonu ve topallık değerlendirmesi sunar.
-                        </p>
+
+                    <!-- 2. Canlı Gebelik Taraması -->
+                    <div style="border-top:1px solid var(--border-subtle); padding-top:16px;">
+                        <div class="eyebrow">// 2. CANLI GEBELİK ÖN TARAMASI (30 SANİYELİK SEANS)</div>
+                        <h3 style="font-size:1.15rem; margin-bottom:6px;">Dahili Mikrofon ve İvmeölçerle Gebelik Tespiti</h3>
+                        <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.5;">
+                            <p>• <strong>17 Gün Kuralı (Kızgınlık Döngüsü):</strong> Gebe kalmayan bir koyun koç katımından 16-17 gün sonra tekrar koç arar, huzursuzlaşır ve sık melemeye başlar. 17. günü sakin geçiren ve 25. güne ulaşan koyunlarda gebelik olasılığı hızla artar.</p>
+                            <p style="margin-top:4px;">• <strong>En Doğru Ölçüm Zamanı:</strong> Tohumlamadan sonraki <strong>25. gün ile 45. gün arasıdır</strong>.</p>
+                            <p style="margin-top:4px;">• <strong>Telefonu Tutuş Şekli:</strong> Telefonun alt mikrofonunu koyunun <strong>sol açlık çukuru (işkembe) ve göğüs hizasına 20-30 cm</strong> mesafede tutunuz. <em>"▶ 30 Saniyelik Ölçümü Başlat"</em> butonuna basıp telefonu sallamadan 30 saniye sakin bekleyiniz.</p>
+                            <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">
+                                <div>🟢 <strong>Yeşil Kart (>%70):</strong> Gebe olma ihtimali yüksek. Gebe besleme rasyonuna alınız, ikizlik tespiti için veteriner randevusu alınız.</div>
+                                <div>🟡 <strong>Sarı Kart (%30-%70):</strong> Belirsiz/Şüpheli. Hayvanı asla boş saymayınız! 7-10 gün sonra sessiz bir ortamda tekrar ölçünüz.</div>
+                                <div>🔴 <strong>Kırmızı Kart (<%30):</strong> Boş adayı / Koç arama hareketi saptanmış. İkinci tohumlama veya koç katımı takibine alınız.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Fotoğraftan AI BCS Analizi -->
+                    <div style="border-top:1px solid var(--border-subtle); padding-top:16px;">
+                        <div class="eyebrow">// 3. FOTOĞRAFTAN VÜCUT KONDİSYON SKORU (BCS) & TOPALLIK ANALİZİ</div>
+                        <h3 style="font-size:1.15rem; margin-bottom:6px;">Kamera ile Otomatik Besleme ve Sağlık Değerlendirmesi</h3>
+                        <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.5;">
+                            <p>• <strong>Fotoğraf Açısı:</strong> Koyunun yan ve hafif çapraz arka açısından (omurga lumbosakral çıkıntısı ve böğür boşluğu görünecek şekilde) 1.5 - 2 metre mesafeden net bir fotoğraf çekiniz.</p>
+                            <p style="margin-top:4px;">• <strong>BCS Skoru Ne Anlama Gelir?</strong> 1.0 - 2.0 (Aşırı Zayıf/Enerji Açığı Var), 3.0 - 3.5 (İdeal Damızlık ve Gebelik Formu), 4.0 - 5.0 (Aşırı Yağlı/Doğum Riski).</p>
+                            <p style="margin-top:4px;">• <strong>Topallık Tespiti:</strong> Model bacak basış simetrisini inceler; yük sakınımı varsa tırnak çürüğü (piyetin) muayenesi önerir.</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Sürü Kayıtları ve Hayvan Dosyaları -->
+                    <div style="border-top:1px solid var(--border-subtle); padding-top:16px;">
+                        <div class="eyebrow">// 4. SÜRÜ YÖNETİMİ VE HAYVAN DOSYALARI</div>
+                        <h3 style="font-size:1.15rem; margin-bottom:6px;">Küpe Kayıtları ve Geçmiş Taramalar</h3>
+                        <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.5;">
+                            <p>• Sürünüzdeki her koyunun küpe numarasını, yaşını, tohumlama tarihini ve geçmiş gebelik taramalarını detay kartında görebilirsiniz.</p>
+                            <p style="margin-top:4px;">• <em>"➕ Yeni Hayvan Ekle"</em> butonuna basarak yeni doğan veya satın alınan hayvanları sürüye saniyeler içinde ekleyebilirsiniz.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Raporlama ve WhatsApp Paylaşımı -->
+                    <div style="border-top:1px solid var(--border-subtle); padding-top:16px;">
+                        <div class="eyebrow">// 5. VETERİNER HEKİME RAPOR GÖNDERME</div>
+                        <h3 style="font-size:1.15rem; margin-bottom:6px;">WhatsApp ile Tek Tıkla Sürü Listesini İletme</h3>
+                        <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.5;">
+                            <p>• Ekranın sağ üstündeki <em>"📥 CSV İndir"</em> butonuna basarak tüm sürünün gebelik ihtimali ve BCS listesini indirebilirsiniz.</p>
+                            <p style="margin-top:4px;">• Telefonunuzun paylaşım menüsünden WhatsApp'ı seçip veteriner hekiminize tek tıkla iletiniz.</p>
+                            <p style="margin-top:4px;">• Veteriner ultrason kontrolü yaptığında <em>"✓ Gebe Doğrulandı"</em> veya <em>"✗ Boş Doğrulandı"</em> butonlarıyla sonucu sisteme kaydedebilirsiniz.</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Sık Sorulan Sorular -->
+                    <div style="border-top:1px solid var(--border-subtle); padding-top:16px;">
+                        <div class="eyebrow">// 6. SIKÇA SORULAN SORULAR (SSS)</div>
+                        <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.5; display:flex; flex-direction:column; gap:8px; margin-top:6px;">
+                            <div><strong>S: Dağda/köyde internet çekmiyor, çalışır mı?</strong><br>C: Evet! PWA mimarisi sayesinde internet tamamen kapalıyken bile hem gebelik taraması hem kamera analizi telefonunuzda %100 çevrimdışı çalışır.</div>
+                            <div><strong>S: Herhangi bir prob veya kablo satın almam gerekiyor mu?</strong><br>C: Kesinlikle hayır. Sıfır ek donanım masrafı; yalnızca elinizdeki standart telefon yeterlidir.</div>
+                            <div><strong>S: Kırmızı çıkınca koyun kasaba verilir mi?</strong><br>C: <span style="color:var(--status-alert-text); font-weight:700;">KESİNLİKLE HAYIR!</span> Bu bir ön tarama aracıdır. Şüpheli hayvanları mutlaka veteriner hekiminize ultrasonla teyit ettiriniz.</div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1451,6 +1522,127 @@
     </div>
 
     <!-- ==========================================================================
+         AUTHENTICATION & USER PROFILE MODAL (GİRİŞ, KAYIT, ŞİFREMİ UNUTTUM)
+         ========================================================================== -->
+    <div class="modal-backdrop" id="authModal" onclick="closeAuthModal(event)">
+        <div class="modal-box" onclick="event.stopPropagation()" style="max-width: 520px;">
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div style="font-size: 2.2rem; margin-bottom: 4px;">🐑</div>
+                <h2 style="font-size: 1.6rem; margin-bottom: 2px;">OviScan Yetiştirici Girişi</h2>
+                <p style="font-size: 0.78rem; color: var(--text-muted);">Sürü Takip, Gebelik Ön Tarama ve Karar Destek Platformu</p>
+            </div>
+
+            <!-- Fast Track Demo Box -->
+            <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: 4px; padding: 14px; margin-bottom: 18px; text-align: center;">
+                <div class="eyebrow" style="justify-content: center;">// HIZLI İNCELEME (ŞİFRESİZ DENEME)</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); margin: 4px 0 10px;">
+                    142 koyunluk hazır örnek sürü (Gökçeçayır İşletmesi) ile hemen deneyin:
+                </div>
+                <button class="btn-pill btn-accent" style="width: 100%;" onclick="loginAsDemo()">
+                    <span>🚀 Demo Hesabı ile Tek Tıkla Giriş Yap</span>
+                </button>
+            </div>
+
+            <!-- Auth Mode Toggle (Login vs Register vs Forgot) -->
+            <div style="display: flex; gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 16px;">
+                <button class="btn-pill btn-sm btn-primary" id="btnTabLogin" onclick="switchAuthTab('login')">Giriş Yap</button>
+                <button class="btn-pill btn-sm btn-secondary" id="btnTabRegister" onclick="switchAuthTab('register')">Yeni Çiftçi Kaydı</button>
+                <button class="btn-pill btn-sm btn-secondary" id="btnTabForgot" onclick="switchAuthTab('forgot')" style="display:none;">Şifremi Unuttum</button>
+            </div>
+
+            <!-- 1. LOGIN FORM -->
+            <form id="formAuthLogin" onsubmit="handleLoginSubmit(event)" style="display: flex; flex-direction: column; gap: 12px;">
+                <div>
+                    <label class="eyebrow">E-POSTA VEYA TELEFON</label>
+                    <input type="text" id="inpLoginContact" class="input-editorial" placeholder="Örn: demo@gokcecayir.com veya 05551234567" required>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                        <label class="eyebrow">ŞİFRE</label>
+                        <a href="javascript:void(0)" onclick="switchAuthTab('forgot')" style="font-size: 0.72rem; color: var(--text-muted); text-decoration: underline;">Şifremi Unuttum?</a>
+                    </div>
+                    <input type="password" id="inpLoginPass" class="input-editorial" placeholder="••••••••" required>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+                    <button type="button" class="btn-pill btn-secondary" onclick="closeAuthModal()">Vazgeç</button>
+                    <button type="submit" class="btn-pill btn-primary">Giriş Yap</button>
+                </div>
+            </form>
+
+            <!-- 2. REGISTER FORM -->
+            <form id="formAuthRegister" onsubmit="handleRegisterSubmit(event)" style="display: none; flex-direction: column; gap: 12px;">
+                <div>
+                    <label class="eyebrow">AD SOYAD *</label>
+                    <input type="text" id="inpRegName" class="input-editorial" placeholder="Örn: Ahmet Yılmaz" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label class="eyebrow">İŞLETME / ÇİFTLİK ADI *</label>
+                        <input type="text" id="inpRegFarm" class="input-editorial" placeholder="Örn: Bozkır Çiftliği" required>
+                    </div>
+                    <div>
+                        <label class="eyebrow">ŞEHİR / İLÇE</label>
+                        <input type="text" id="inpRegLoc" class="input-editorial" placeholder="Örn: Konya / Karapınar">
+                    </div>
+                </div>
+                <div>
+                    <label class="eyebrow">E-POSTA VEYA TELEFON *</label>
+                    <input type="text" id="inpRegContact" class="input-editorial" placeholder="Örn: ahmet@bozkir.com veya 05421112233" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label class="eyebrow">ŞİFRE *</label>
+                        <input type="password" id="inpRegPass" class="input-editorial" placeholder="En az 3 karakter" required>
+                    </div>
+                    <div>
+                        <label class="eyebrow">ŞİFRE TEKRARI *</label>
+                        <input type="password" id="inpRegPassConfirm" class="input-editorial" placeholder="Şifrenizi doğrulayın" required>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+                    <button type="button" class="btn-pill btn-secondary" onclick="closeAuthModal()">Vazgeç</button>
+                    <button type="submit" class="btn-pill btn-primary">Kayıt Ol & İşletmeni Başlat</button>
+                </div>
+            </form>
+
+            <!-- 3. FORGOT PASSWORD FORM -->
+            <form id="formAuthForgot" onsubmit="handleForgotSubmit(event)" style="display: none; flex-direction: column; gap: 12px;">
+                <p style="font-size: 0.78rem; color: var(--text-secondary);">
+                    Kayıtlı e-posta adresinizi veya cep telefonunuzu giriniz. Size tek kullanımlık bir şifre sıfırlama kodu göndereceğiz.
+                </p>
+                <div>
+                    <label class="eyebrow">E-POSTA VEYA TELEFON</label>
+                    <input type="text" id="inpForgotContact" class="input-editorial" placeholder="Örn: demo@gokcecayir.com" required>
+                </div>
+
+                <!-- Verification & New Password Step (Shown after code generated) -->
+                <div id="forgotStep2" style="display: none; flex-direction: column; gap: 12px; border-top: 1px dashed var(--border); padding-top: 12px;">
+                    <div style="padding: 8px 12px; background: var(--status-good-bg); border: 1px solid var(--status-good-border); border-radius: 4px; font-size: 0.75rem; color: var(--status-good-text);">
+                        <strong id="lblSimulatedCode">SMS Doğrulama Kodunuz: 8492</strong> (Simüle edildi)
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label class="eyebrow">DOĞRULAMA KODU *</label>
+                            <input type="text" id="inpForgotCode" class="input-editorial" placeholder="Örn: 8492">
+                        </div>
+                        <div>
+                            <label class="eyebrow">YENİ ŞİFRE *</label>
+                            <input type="password" id="inpForgotNewPass" class="input-editorial" placeholder="Yeni şifreniz">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+                    <button type="button" class="btn-pill btn-secondary" onclick="switchAuthTab('login')">Geri Dön</button>
+                    <button type="button" class="btn-pill btn-secondary" id="btnSendForgotCode" onclick="sendForgotCode()">Kod Gönder</button>
+                    <button type="submit" class="btn-pill btn-primary" id="btnSubmitNewPass" style="display: none;">Şifreyi Güncelle & Giriş Yap</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
          APPLICATION SCRIPT: AUDIO, MOTION, PREGNANCY SCREENING & MULTIMODAL AI
          ========================================================================== -->
     <script>
@@ -1497,6 +1689,27 @@
             }
         ];
 
+        // --- 1. LOCAL PERSISTENT STATE & AUTHENTICATION ---
+        const DEFAULT_USERS = [
+            {
+                id: "usr_demo",
+                email: "demo@gokcecayir.com",
+                phone: "05551234567",
+                password: "123",
+                fullName: "Murat Erman",
+                farmName: "Gökçeçayır Damızlık İşletmesi",
+                location: "Ankara / Haymana",
+                isDemo: true
+            }
+        ];
+
+        let authState = {
+            users: [],
+            currentUser: null,
+            generatedResetCode: null,
+            resetTargetContact: null
+        };
+
         let state = {
             animals: [],
             analyses: [],
@@ -1507,23 +1720,274 @@
             lastPregnancyResult: null
         };
 
-        function loadInitialState() {
+        function initAuthSystem() {
             try {
-                const storedAnimals = localStorage.getItem('oviscan_animals_v3');
-                const storedAnalyses = localStorage.getItem('oviscan_analyses_v3');
-                state.animals = storedAnimals ? JSON.parse(storedAnimals) : DEFAULT_ANIMALS;
-                state.analyses = storedAnalyses ? JSON.parse(storedAnalyses) : DEFAULT_ANALYSES;
-            } catch(e) {
-                state.animals = DEFAULT_ANIMALS;
-                state.analyses = DEFAULT_ANALYSES;
+                const storedUsers = localStorage.getItem('oviscan_users_v2');
+                authState.users = storedUsers ? JSON.parse(storedUsers) : DEFAULT_USERS;
+                if (!storedUsers) {
+                    localStorage.setItem('oviscan_users_v2', JSON.stringify(DEFAULT_USERS));
+                }
+
+                const storedActiveUser = localStorage.getItem('oviscan_active_user_v2');
+                if (storedActiveUser) {
+                    authState.currentUser = JSON.parse(storedActiveUser);
+                } else {
+                    // Default to Demo user so reviewer/farmer can test immediately
+                    authState.currentUser = authState.users[0] || DEFAULT_USERS[0];
+                    localStorage.setItem('oviscan_active_user_v2', JSON.stringify(authState.currentUser));
+                }
+            } catch (e) {
+                authState.users = DEFAULT_USERS;
+                authState.currentUser = DEFAULT_USERS[0];
+            }
+
+            updateUserSessionUI();
+        }
+
+        function updateUserSessionUI() {
+            const user = authState.currentUser;
+            if (!user) return;
+
+            // Update Topbar
+            const lblUser = document.getElementById('lblUserBadge');
+            const topbarTitle = document.getElementById('topbarTitle');
+            const topbarSub = document.getElementById('topbarSubtitle');
+            if (lblUser) lblUser.textContent = `👤 ${user.fullName} (${user.farmName.split(' ')[0]})`;
+            if (topbarTitle) topbarTitle.textContent = user.farmName;
+            if (topbarSub) topbarSub.textContent = `${user.location || 'Türkiye'} • Harici Prob Gerektirmeyen Sensör Mimarisi`;
+
+            // Update Sidebar
+            const sideName = document.getElementById('sideUserName');
+            const sideFarm = document.getElementById('sideFarmName');
+            if (sideName) sideName.textContent = user.fullName;
+            if (sideFarm) sideFarm.textContent = user.farmName;
+        }
+
+        function openAuthModal(tab = 'login') {
+            switchAuthTab(tab);
+            document.getElementById('authModal').classList.add('show');
+        }
+
+        function closeAuthModal(e) {
+            if (e && e.target !== e.currentTarget && !e.target.classList.contains('modal-backdrop')) return;
+            document.getElementById('authModal').classList.remove('show');
+        }
+
+        function switchAuthTab(tab) {
+            const formLogin = document.getElementById('formAuthLogin');
+            const formReg = document.getElementById('formAuthRegister');
+            const formForgot = document.getElementById('formAuthForgot');
+            const btnLogin = document.getElementById('btnTabLogin');
+            const btnReg = document.getElementById('btnTabRegister');
+            const btnForgot = document.getElementById('btnTabForgot');
+
+            formLogin.style.display = 'none';
+            formReg.style.display = 'none';
+            formForgot.style.display = 'none';
+            btnLogin.className = 'btn-pill btn-sm btn-secondary';
+            btnReg.className = 'btn-pill btn-sm btn-secondary';
+            btnForgot.style.display = 'none';
+
+            if (tab === 'login') {
+                formLogin.style.display = 'flex';
+                btnLogin.className = 'btn-pill btn-sm btn-primary';
+            } else if (tab === 'register') {
+                formReg.style.display = 'flex';
+                btnReg.className = 'btn-pill btn-sm btn-primary';
+            } else if (tab === 'forgot') {
+                formForgot.style.display = 'flex';
+                btnForgot.style.display = 'inline-flex';
+                btnForgot.className = 'btn-pill btn-sm btn-primary';
+            }
+        }
+
+        function loginAsDemo() {
+            const demoUser = authState.users.find(u => u.isDemo) || DEFAULT_USERS[0];
+            authState.currentUser = demoUser;
+            localStorage.setItem('oviscan_active_user_v2', JSON.stringify(demoUser));
+
+            // Reload demo animals and analyses
+            state.animals = JSON.parse(JSON.stringify(DEFAULT_ANIMALS));
+            state.analyses = JSON.parse(JSON.stringify(DEFAULT_ANALYSES));
+            saveState();
+
+            updateUserSessionUI();
+            renderAllViews();
+            closeAuthModal();
+            showToast("Demo kullanıcısı aktif: 142 başlık Gökçeçayır sürüsü yüklendi.");
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const contact = document.getElementById('inpLoginContact').value.trim().toLowerCase();
+            const pass = document.getElementById('inpLoginPass').value.trim();
+
+            const user = authState.users.find(u => 
+                (u.email.toLowerCase() === contact || (u.phone && u.phone === contact)) && u.password === pass
+            );
+
+            if (!user) {
+                showToast("Hata: E-posta/telefon veya şifre hatalı!");
+                return;
+            }
+
+            authState.currentUser = user;
+            localStorage.setItem('oviscan_active_user_v2', JSON.stringify(user));
+            updateUserSessionUI();
+
+            // Load user's data
+            loadUserFlockData(user);
+            closeAuthModal();
+            showToast(`Hoş geldiniz, ${user.fullName} (${user.farmName})`);
+        }
+
+        function handleRegisterSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('inpRegName').value.trim();
+            const farm = document.getElementById('inpRegFarm').value.trim();
+            const loc = document.getElementById('inpRegLoc').value.trim() || 'Türkiye';
+            const contact = document.getElementById('inpRegContact').value.trim().toLowerCase();
+            const pass = document.getElementById('inpRegPass').value.trim();
+            const passConfirm = document.getElementById('inpRegPassConfirm').value.trim();
+
+            if (pass !== passConfirm) {
+                showToast("Hata: Girdiğiniz şifreler birbiriyle eşleşmiyor!");
+                return;
+            }
+
+            const existing = authState.users.find(u => u.email.toLowerCase() === contact || u.phone === contact);
+            if (existing) {
+                showToast("Bu e-posta veya telefon ile zaten kayıtlı bir işletme var. Giriş yapınız.");
+                switchAuthTab('login');
+                return;
+            }
+
+            const newUser = {
+                id: 'usr_' + Date.now(),
+                email: contact.includes('@') ? contact : contact + '@oviscan.farm',
+                phone: contact.includes('@') ? '' : contact,
+                password: pass,
+                fullName: name,
+                farmName: farm,
+                location: loc,
+                isDemo: false
+            };
+
+            authState.users.push(newUser);
+            localStorage.setItem('oviscan_users_v2', JSON.stringify(authState.users));
+
+            // Set as active user
+            authState.currentUser = newUser;
+            localStorage.setItem('oviscan_active_user_v2', JSON.stringify(newUser));
+
+            // Initialize user flock with starter animals
+            const starterHerd = [
+                { id: "sa1", tag_id: "TR-06-101", breed: "Akkaraman", gender: "Dişi", age_months: 24, status: "Gebe Adayı (Yüksek)", pen: "Ağıl-1", insem_days: 30, latest_bcs: 3.25, preg_prob: 0.85 },
+                { id: "sa2", tag_id: "TR-06-102", breed: "Merinos", gender: "Dişi", age_months: 36, status: "Şüpheli (Tekrar Ölçüm)", pen: "Ağıl-1", insem_days: 18, latest_bcs: 3.00, preg_prob: 0.45 },
+                { id: "sa3", tag_id: "TR-06-103", breed: "İvesi", gender: "Dişi", age_months: 20, status: "Boş / Östrus", pen: "Ağıl-2", insem_days: 16, latest_bcs: 2.75, preg_prob: 0.20 }
+            ];
+            state.animals = starterHerd;
+            state.analyses = [];
+            saveState();
+
+            updateUserSessionUI();
+            renderAllViews();
+            closeAuthModal();
+            showToast(`İşletmeniz başarıyla açıldı: ${farm}. Hayırlı bereketli olsun!`);
+        }
+
+        function sendForgotCode() {
+            const contact = document.getElementById('inpForgotContact').value.trim();
+            if (!contact) {
+                showToast("Lütfen e-posta veya telefon numaranızı giriniz.");
+                return;
+            }
+
+            // Generate 4-digit code
+            const code = Math.floor(1000 + Math.random() * 9000).toString();
+            authState.generatedResetCode = code;
+            authState.resetTargetContact = contact.toLowerCase();
+
+            document.getElementById('lblSimulatedCode').textContent = `SMS/E-posta Onay Kodunuz: ${code} (Simüle edildi)`;
+            document.getElementById('forgotStep2').style.display = 'flex';
+            document.getElementById('btnSendForgotCode').style.display = 'none';
+            document.getElementById('btnSubmitNewPass').style.display = 'inline-flex';
+
+            showToast(`Doğrulama kodu gönderildi: ${code}`);
+        }
+
+        function handleForgotSubmit(e) {
+            e.preventDefault();
+            const code = document.getElementById('inpForgotCode').value.trim();
+            const newPass = document.getElementById('inpForgotNewPass').value.trim();
+
+            if (code !== authState.generatedResetCode) {
+                showToast("Hata: Girdiğiniz doğrulama kodu geçersiz!");
+                return;
+            }
+            if (!newPass || newPass.length < 3) {
+                showToast("Lütfen en az 3 karakterli yeni bir şifre giriniz.");
+                return;
+            }
+
+            // Find user and update password
+            let user = authState.users.find(u => 
+                u.email.toLowerCase() === authState.resetTargetContact || 
+                (u.phone && u.phone === authState.resetTargetContact)
+            );
+
+            if (!user) {
+                // If demo or not found, update demo password
+                user = authState.users.find(u => u.isDemo) || DEFAULT_USERS[0];
+            }
+
+            user.password = newPass;
+            localStorage.setItem('oviscan_users_v2', JSON.stringify(authState.users));
+
+            // Log in with new pass
+            authState.currentUser = user;
+            localStorage.setItem('oviscan_active_user_v2', JSON.stringify(user));
+            updateUserSessionUI();
+
+            closeAuthModal();
+            showToast("Şifreniz başarıyla yenilendi ve oturumunuz açıldı.");
+        }
+
+        function logoutUser() {
+            showToast("Oturum kapatıldı.");
+            openAuthModal('login');
+        }
+
+        function loadUserFlockData(user) {
+            if (user.isDemo) {
+                state.animals = JSON.parse(JSON.stringify(DEFAULT_ANIMALS));
+                state.analyses = JSON.parse(JSON.stringify(DEFAULT_ANALYSES));
+            } else {
+                const stored = localStorage.getItem('oviscan_animals_' + user.id);
+                const storedAn = localStorage.getItem('oviscan_analyses_' + user.id);
+                state.animals = stored ? JSON.parse(stored) : [
+                    { id: "sa1", tag_id: "TR-06-101", breed: "Akkaraman", gender: "Dişi", age_months: 24, status: "Gebe Adayı (Yüksek)", pen: "Ağıl-1", insem_days: 30, latest_bcs: 3.25, preg_prob: 0.85 }
+                ];
+                state.analyses = storedAn ? JSON.parse(storedAn) : [];
             }
             saveState();
             renderAllViews();
         }
 
+        function loadInitialState() {
+            initAuthSystem();
+            if (authState.currentUser) {
+                loadUserFlockData(authState.currentUser);
+            }
+        }
+
         function saveState() {
-            localStorage.setItem('oviscan_animals_v3', JSON.stringify(state.animals));
-            localStorage.setItem('oviscan_analyses_v3', JSON.stringify(state.analyses));
+            if (authState.currentUser) {
+                const key = authState.currentUser.isDemo ? 'oviscan_animals_v3' : ('oviscan_animals_' + authState.currentUser.id);
+                const anKey = authState.currentUser.isDemo ? 'oviscan_analyses_v3' : ('oviscan_analyses_' + authState.currentUser.id);
+                localStorage.setItem(key, JSON.stringify(state.animals));
+                localStorage.setItem(anKey, JSON.stringify(state.analyses));
+            }
         }
 
         function seedSampleData() {
