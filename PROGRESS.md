@@ -10,6 +10,12 @@
   - Gerçekçi tohum sürü verileriyle dolu KPI metrikleri (Toplam, Gebe, Şüpheli, Boş, Ortalama BCS).
   - Dikkat gerektiren hayvanlar acil durum kuyruğu.
   - Hızlı işlem kısayolları ve son analiz akışı.
+- [x] **Canlı Gebelik Ön Taraması (Tam Çalışır - OviScan'in İmzası):**
+  - Dahili mikrofon (44.1 kHz Web Audio API), 150 Hz yazılımsal HPF filtresi ve canlı dalga formu canvası.
+  - Dahili ivmeölçer (50 Hz hareket/durum algılama) ve optik solunum sayımı.
+  - 17 günlük östrus siklusu (non-return to estrus) takvimi ile late fusion olasılık motoru.
+  - 3 seviyeli trafik ışığı: 🟢 Yüksek (>%70), 🟡 Belirsiz (%30-70), 🔴 Düşük (<%30).
+  - XAI açıklanabilir gerekçeler ve veteriner ultrason tescil butonları ("✓ Gebe", "✗ Boş").
 - [x] **Hayvan Kaydı & Detay Dosyası (Tam Çalışır):**
   - Küpe no arama, ırk ve durum filtreleme.
   - Yeni hayvan ekleme formu (veritabanına ve panoya anında kayıt).

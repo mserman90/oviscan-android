@@ -10,11 +10,11 @@ OviScan, koyun yetiştiricilerinin sahada (ahır, mera, açık alan) hem mobil t
 │ │ Editoryal Tasarım Sistemi (Sıcak-Nötr, Sıfır Gölge, Hairline Sınırlar)  │ │
 │ │ GSAP Animasyon Motoru (power2.out, prefers-reduced-motion desteği)      │ │
 │ └─────────────────────────────────────────────────────────────────────────┘ │
-│ ┌───────────────┬─────────────────┬────────────────────┬──────────────────┐ │
-│ │  Sürü Panosu  │ Hayvan Kaydı    │ Fotoğraftan AI     │ PWA Kabuğu       │ │
-│ │  (Flock KPI & │ (Küpe Listesi & │ (BCS, Topallık &   │ (Çevrimdışı SW & │ │
-│ │  Öncelikler)  │ Detay Dosyası)  │ Karar Destek)      │ Manifest)        │ │
-│ └───────────────┴─────────────────┴────────────────────┴──────────────────┘ │
+│ ┌───────────────┬─────────────────┬────────────────────┬────────────────────┬──────────────────┐ │
+│ │  Sürü Panosu  │ Canlı Gebelik   │ Fotoğraftan AI     │ Hayvan Kayıtları   │ PWA Kabuğu       │ │
+│ │  (Flock KPI & │ Taraması        │ (BCS, Topallık &   │ (Küpe Listesi &    │ (Çevrimdışı SW & │ │
+│ │  Öncelikler)  │ (Mic + IMU + 17)│ Karar Destek)      │ Detay Dosyası)     │ Manifest)        │ │
+│ └───────────────┴─────────────────┴────────────────────┴────────────────────┴──────────────────┘ │
 └──────────────────────────────────────┬──────────────────────────────────────┘
                                        │
                 ┌──────────────────────┴──────────────────────┐
