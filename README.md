@@ -74,10 +74,11 @@ flowchart TD
 
 ## 4. Nasıl Test Edilir?
 
-### A. Web Simülatöründe Hemen Test Edin
-İlave hiçbir kurulum yapmadan, sistemin çalışma mantığını tarayıcınızda görmek için:
-- [`docs/index.html`](file:///C:/Users/murat.erman/.gemini/antigravity/scratch/oviscan-android/docs/index.html) veya [`index.html`](file:///C:/Users/murat.erman/.gemini/antigravity/scratch/oviscan-android/index.html) dosyasını tarayıcınızda çift tıklayarak açabilirsiniz.
-- Veya PowerShell ile yerel sunucuyu başlatabilirsiniz:
+### A. Canlı PWA Demosu ve Telefona Yükleme (İnternetsiz Çalışma)
+- **Canlı Web ve PWA Adresi:** [https://mserman90.github.io/oviscan-android/](https://mserman90.github.io/oviscan-android/)
+- **Çiftçi Kullanım Kılavuzu:** Adım adım detaylı saha rehberi için [`docs/KULLANIM_KILAVUZU.md`](file:///C:/Users/murat.erman/.gemini/antigravity/scratch/oviscan-android/docs/KULLANIM_KILAVUZU.md) dokümanını veya uygulamanın içindeki **"Kılavuz"** sekmesini inceleyebilirsiniz.
+- İster bilgisayarda doğrudan tarayıcıdan açabilir, ister telefonunuzun Chrome tarayıcısından girip **"Ana Ekrana Ekle / Uygulamayı Yükle"** diyerek köyde internetsiz kullanabilirsiniz.
+- Yerel simülasyon için:
   ```powershell
   cd "C:\Users\murat.erman\.gemini\antigravity\scratch\oviscan-android"
   .\serve_demo.ps1

@@ -882,18 +882,170 @@
         </div>
     </div>
 
-    <!-- TAB 4: SİSTEM HAKKINDA & KILAVUZ -->
+    <!-- TAB 4: SİSTEM HAKKINDA & ÇİFTÇİ KULLANIM KILAVUZU -->
     <div class="view-content" id="viewAbout">
-        <div class="card-box">
-            <div class="card-title" style="margin-bottom:8px;">OviScan PWA Mimarisi</div>
-            <p style="font-size:0.75rem; line-height:1.45; color:#ccc;">
-                Bu uygulama, **harici ultrason probu, termal dongle veya özel IoT sensörü gerektirmeksizin**, yalnızca Android telefonun dahili mikrofonu, ivmeölçeri ve kamerası ile çalışır.
+        <!-- Kritik Yasal & Tıbbi İkaz -->
+        <div style="background: rgba(239, 68, 68, 0.12); border: 2px solid var(--accent-red); border-radius: 12px; padding: 14px; margin-bottom: 14px;">
+            <div style="display:flex; align-items:center; gap:8px; color:var(--accent-red); font-weight:800; font-size:0.92rem; margin-bottom:6px;">
+                <span>⚠️</span>
+                <span>ÇOK ÖNEMLİ YASAL VE TIBBİ UYARI</span>
+            </div>
+            <p style="font-size:0.76rem; color:#fca5a5; line-height:1.45; margin:0;">
+                Bu uygulama <strong>kesinlikle bir veteriner hekim ultrason cihazı veya laboratuvar kan testi DEĞİLDİR</strong>. Harici ultrason probu veya iğne kullanmaksızın, yalnızca telefonun dahili mikrofonu ve ivmeölçeri ile çalışan bir <strong>ÖN ELEME VE RİSK SIRALAMASI ARACIDIR</strong>.
             </p>
-            <div style="margin-top:10px; font-size:0.72rem; color:var(--text-muted); line-height:1.4;">
-                <p><strong>• 44.1 kHz Mikrofon:</strong> Geviş ritmi ve östrus meleme akustikleri (MFCC + Pitch + HNR).</p>
-                <p style="margin-top:4px;"><strong>• 50 Hz İvmeölçer:</strong> 17 ve 34. gün östrus dönüşü olmaması (dinlenme ve yatma duruşu).</p>
-                <p style="margin-top:4px;"><strong>• Standart Kamera:</strong> Temassız böğür solunumu frekansı (BPM).</p>
-                <p style="margin-top:4px;"><strong>• Çevrimdışı Depolama:</strong> İnternet olmadan dağda/ahırda tam kapasite çalışır.</p>
+            <p style="font-size:0.74rem; color:#fee2e2; line-height:1.4; margin-top:6px; font-weight:700;">
+                ⛔ Asla sadece bu uygulamaya güvenerek bir koyunu "kesin boş" diye kesime göndermeyiniz veya "kesin gebe" diye resmi veteriner hekim muayenesinden vazgeçmeyiniz!
+            </p>
+        </div>
+
+        <!-- 1. OviScan Ne İşe Yarar? -->
+        <div class="card-box" style="margin-bottom:12px;">
+            <div class="card-title" style="color:var(--accent-blue); margin-bottom:6px; font-size:0.88rem;">
+                🐑 1. OviScan Ne İşe Yarar?
+            </div>
+            <p style="font-size:0.75rem; color:#e2e8f0; line-height:1.45;">
+                OviScan, <strong>ilave hiçbir kablo, cihaz, prob veya test kiti satın almadan</strong>, cebinizdeki akıllı telefonun dahili sensörleriyle:
+            </p>
+            <div style="margin-top:8px; font-size:0.73rem; color:#cbd5e1; line-height:1.45;">
+                <p>• Tohumlanan koyunların <strong>25. günden itibaren</strong> gebelik ihtimalini hesaplar.</p>
+                <p style="margin-top:3px;">• Sürünüzü <strong>Yeşil</strong> (Gebe), <strong>Sarı</strong> (Şüpheli) ve <strong>Kırmızı</strong> (Boş) olarak sıralar.</p>
+                <p style="margin-top:3px;">• Veteriner hekim geldiğinde ultrasonu sadece şüpheli hayvanlara yaptırarak <strong>masraf ve zaman tasarrufu</strong> sağlar.</p>
+                <p style="margin-top:3px;">• <strong>Dağda, yaylada ve ahırda internet çekmese bile</strong> tamamen çevrimdışı çalışır.</p>
+            </div>
+        </div>
+
+        <!-- 2. Ne Zaman Ölçüm Yapılmalı? -->
+        <div class="card-box" style="margin-bottom:12px;">
+            <div class="card-title" style="color:var(--accent-yellow); margin-bottom:6px; font-size:0.88rem;">
+                ⏱️ 2. Ne Zaman Ölçüm Yapılmalıdır?
+            </div>
+            <div style="font-size:0.74rem; color:#e2e8f0; line-height:1.45;">
+                <p><strong>• Tohumlama / Koç Katım Tarihi:</strong> Koyunun koça verildiği tarihi bilmek şarttır.</p>
+                <p style="margin-top:4px;"><strong>• 17 Gün Kuralı (Kızgınlık Döngüsü):</strong> Gebe kalmayan koyun <strong>16–17 gün sonra</strong> yeniden koç arar, huzursuzlaşır ve sık melemeye başlar.</p>
+                <p style="margin-top:4px;"><strong>• Neden 25. Günden Sonra?</strong> 17. günü sakin geçiren, geviş ritmi oturan ve dinlenme süresi artan koyunda gebelik ihtimali matematiksel olarak güçlenir.</p>
+                <p style="margin-top:4px; color:var(--accent-green); font-weight:700;">• En İdeal Ölçüm Aralığı: Tohumlamadan sonraki 25. gün ile 45. gün arasıdır.</p>
+            </div>
+        </div>
+
+        <!-- 3. Ahırda 4 Adımda Ölçüm -->
+        <div class="card-box" style="margin-bottom:12px;">
+            <div class="card-title" style="color:var(--accent-green); margin-bottom:8px; font-size:0.88rem;">
+                📱 3. Ahırda Adım Adım Ölçüm Nasıl Yapılır?
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent-blue); padding:8px 10px; border-radius:6px;">
+                    <div style="font-weight:700; font-size:0.75rem; color:#93c5fd;">Adım 1: Sakin Ortam & Gürültüden Kaçınma</div>
+                    <div style="font-size:0.71rem; color:#94a3b8; margin-top:2px;">
+                        Traktör, yem mikseri veya havlayan köpek sesinden uzak bir köşeye geçin. Rüzgarlı havada telefon mikrofonuna vücudunuzla siper olun.
+                    </div>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent-blue); padding:8px 10px; border-radius:6px;">
+                    <div style="font-weight:700; font-size:0.75rem; color:#93c5fd;">Adım 2: Hayvanı Seçin & Modu Belirleyin</div>
+                    <div style="font-size:0.71rem; color:#94a3b8; margin-top:2px;">
+                        Küpe numarasını seçin. "Elde Hızlı Tarama (30 sn)" modunu kullanın (veya tasma cebinde 60 sn).
+                    </div>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent-blue); padding:8px 10px; border-radius:6px;">
+                    <div style="font-weight:700; font-size:0.75rem; color:#93c5fd;">Adım 3: Telefonu Doğru Konumlandırın</div>
+                    <div style="font-size:0.71rem; color:#94a3b8; margin-top:2px;">
+                        Telefonun alt mikrofonunu koyunun <strong>sol açlık çukuru (işkembe) ve göğüs hizasına 20–30 cm</strong> mesafede tutun. Kamerayı karın böğrüne doğru hafifçe çevirin.
+                    </div>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent-green); padding:8px 10px; border-radius:6px;">
+                    <div style="font-weight:700; font-size:0.75rem; color:#86efac;">Adım 4: "Ölçümü Başlat" ve 30 Saniye Sabit Durun</div>
+                    <div style="font-size:0.71rem; color:#94a3b8; margin-top:2px;">
+                        Yeşil düğmeye basın. Ekranda ses dalgaları akarken telefonu sallamadan sakin tutun. Süre bitince telefon titreyecektir.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Trafik Işığı Kuralı (Sonuçları Okuma) -->
+        <div class="card-box" style="margin-bottom:12px;">
+            <div class="card-title" style="margin-bottom:8px; font-size:0.88rem;">
+                🚦 4. Sonuçları Okuma (Trafik Işığı Sistemi)
+            </div>
+            
+            <!-- Yeşil -->
+            <div style="background:rgba(16, 185, 129, 0.1); border:1px solid rgba(16, 185, 129, 0.3); border-radius:8px; padding:10px; margin-bottom:8px;">
+                <div style="font-weight:800; font-size:0.78rem; color:var(--accent-green);">🟢 YEŞİL: Gebe Olma İhtimali Yüksek (> %70)</div>
+                <p style="font-size:0.71rem; color:#cbd5e1; margin-top:3px; line-height:1.4;">
+                    Hayvan 17. gün kızgınlık evresini sakin aşmış, geviş ritmi düzenli, östrus meleme atağı yok.
+                </p>
+                <p style="font-size:0.71rem; color:#86efac; margin-top:3px; font-weight:600;">
+                    👉 <strong>Ne Yapmalı?</strong> Gebe adayı olarak ayırın, besleme rasyonunu ayarlayın, veteriner ultrasonuyla tekiz/ikiz tescili randevusu alın.
+                </p>
+            </div>
+
+            <!-- Sarı -->
+            <div style="background:rgba(245, 158, 11, 0.1); border:1px solid rgba(245, 158, 11, 0.3); border-radius:8px; padding:10px; margin-bottom:8px;">
+                <div style="font-weight:800; font-size:0.78rem; color:var(--accent-yellow);">🟡 SARI: Belirsiz / Tekrar Tarama Gerekli (%30 – %70)</div>
+                <p style="font-size:0.71rem; color:#cbd5e1; margin-top:3px; line-height:1.4;">
+                    Sinyaller sınır değerde. Ya ölçüm anında çevre gürültüsü oldu ya da hayvan fazla kımıldadı.
+                </p>
+                <p style="font-size:0.71rem; color:#fde68a; margin-top:3px; font-weight:600;">
+                    👉 <strong>Ne Yapmalı?</strong> Hayvanı kesinlikle boş saymayın! 7–10 gün sonra sessiz bir ortamda ölçümü tekrarlayın.
+                </p>
+            </div>
+
+            <!-- Kırmızı -->
+            <div style="background:rgba(239, 68, 68, 0.1); border:1px solid rgba(239, 68, 68, 0.3); border-radius:8px; padding:10px;">
+                <div style="font-weight:800; font-size:0.78rem; color:var(--accent-red);">🔴 KIRMIZI: Düşük İhtimal / Boş Adayı (< %30)</div>
+                <p style="font-size:0.71rem; color:#cbd5e1; margin-top:3px; line-height:1.4;">
+                    Huzursuz koç arama hareketi, sık tiz meleme yakalandı veya tohumlama günü kızgınlık nüksüne denk geliyor.
+                </p>
+                <p style="font-size:0.71rem; color:#fca5a5; margin-top:3px; font-weight:600;">
+                    👉 <strong>Ne Yapmalı?</strong> İkinci tohumlama veya koç katımı takibine alın. Asla veteriner kontrolü olmadan kestirmeyin!
+                </p>
+            </div>
+        </div>
+
+        <!-- 5. XAI Açıklanabilirlik -->
+        <div class="card-box" style="margin-bottom:12px;">
+            <div class="card-title" style="color:var(--accent-yellow); margin-bottom:6px; font-size:0.88rem;">
+                🧠 5. Açıklanabilir Yapay Zeka (XAI) Nedir?
+            </div>
+            <p style="font-size:0.73rem; color:#cbd5e1; line-height:1.45;">
+                OviScan kapalı bir kutu değildir. Her ölçümün altında sonucun neden çıktığını madde madde izah eder:
+            </p>
+            <div style="margin-top:6px; font-size:0.71rem; color:#94a3b8; line-height:1.4;">
+                <p>• <strong>Mikrofon:</strong> Düzenli geviş/solunum akustikleri yakalandı; östrus meleme atağı yok.</p>
+                <p style="margin-top:3px;">• <strong>İvmeölçer:</strong> Ölçüm sırasında sakin duruldu (düşük aktivite indeksi).</p>
+                <p style="margin-top:3px;">• <strong>Takvim:</strong> Tohumlama sonrası 17 günlük kızgınlık döngüsü aşılmış (non-return pozitif).</p>
+                <p style="margin-top:3px;">• <strong>Kamera:</strong> Karın solunum hızı dakika 28 BPM (dinlenme gebelik metabolizmasıyla uyumlu).</p>
+            </div>
+        </div>
+
+        <!-- 6. WhatsApp Raporlama -->
+        <div class="card-box" style="margin-bottom:12px;">
+            <div class="card-title" style="color:var(--accent-blue); margin-bottom:6px; font-size:0.88rem;">
+                📤 6. Raporu Veteriner Hekime WhatsApp ile Gönderme
+            </div>
+            <div style="font-size:0.73rem; color:#cbd5e1; line-height:1.45;">
+                <p>1. Ekranın altından <strong>"Raporlar" (📜)</strong> sekmesine dokunun.</p>
+                <p style="margin-top:3px;">2. Sağ üstteki yeşil <strong>"CSV İndir / Paylaş"</strong> butonuna basın.</p>
+                <p style="margin-top:3px;">3. WhatsApp'ı seçerek veteriner hekiminize tüm sürünün ön eleme listesini tek tıkla iletin.</p>
+                <p style="margin-top:3px;">4. Hekim muayene ettiğinde <strong>"✓ Gebe Doğrulandı"</strong> veya <strong>"✗ Boş Doğrulandı"</strong> butonlarıyla kaydı güncelleyin.</p>
+            </div>
+        </div>
+
+        <!-- 7. Sıkça Sorulan Sorular -->
+        <div class="card-box">
+            <div class="card-title" style="margin-bottom:8px; font-size:0.88rem;">
+                ❓ 7. Sıkça Sorulan Sorular (SSS)
+            </div>
+            <div style="font-size:0.72rem; color:#cbd5e1; line-height:1.45;">
+                <p><strong>S: Bu telefon kuzu kalp atışını duyar mı?</strong><br>
+                C: Hayır. Kuzu kalp atışı kalın koyun yapağısı ve derisi altından sadece özel ultrason problarıyla duyulur. Telefon mikrofonu annenin solunumunu, işkembe geviş ritmini ve kızgınlık meleme sesini dinler.</p>
+                
+                <p style="margin-top:8px;"><strong>S: Dağda/Köyde internet çekmiyor, çalışır mı?</strong><br>
+                C: Evet! PWA mimarisi sayesinde uygulama telefonunuza bir kez kurulduktan sonra internet kapalıyken bile %100 çevrimdışı çalışır.</p>
+
+                <p style="margin-top:8px;"><strong>S: Kablo, cihaz veya prob almam gerekir mi?</strong><br>
+                C: Kesinlikle hayır. Sıfır ek donanım, sıfır harcama. Sadece elinizdeki telefon yeterlidir.</p>
+
+                <p style="margin-top:8px;"><strong>S: Kırmızı çıkarsa koyunu kasaba satabilir miyim?</strong><br>
+                C: <strong style="color:var(--accent-red);">KESİNLİKLE HAYIR!</strong> Bu bir ön eleme aracıdır. Gebe bir koyunun kesilmesi büyük maddi ve vicdani kayıptır. Şüpheli hayvanları mutlaka veteriner hekiminize ultrasonla teyit ettiriniz.</p>
             </div>
         </div>
     </div>
