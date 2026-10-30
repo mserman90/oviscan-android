@@ -1,0 +1,24 @@
+{
+  "name": "analyses",
+  "description": "Fotoğraftan ve sensörlerden multimodal AI analiz kayıtları",
+  "columns": [
+    { "name": "id", "type": "uuid", "primary_key": true, "default": "gen_random_uuid()" },
+    { "name": "user_id", "type": "uuid", "nullable": false },
+    { "name": "animal_id", "type": "uuid", "nullable": false, "references": "animals(id)" },
+    { "name": "analysis_type", "type": "varchar(32)", "nullable": false, "default": "photo_bcs" },
+    { "name": "image_url", "type": "text", "nullable": true },
+    { "name": "bcs_score", "type": "numeric(3,2)", "nullable": true },
+    { "name": "confidence", "type": "numeric(4,3)", "nullable": false, "default": 0.850 },
+    { "name": "risk_level", "type": "varchar(16)", "nullable": false, "default": "Düşük" },
+    { "name": "posture_gait", "type": "varchar(64)", "nullable": true },
+    { "name": "findings", "type": "jsonb", "nullable": false, "default": "[]" },
+    { "name": "recommendations", "type": "jsonb", "nullable": false, "default": "[]" },
+    { "name": "ai_model", "type": "varchar(64)", "nullable": false, "default": "gemini-3.1-pro-preview" },
+    { "name": "created_at", "type": "timestamp with time zone", "default": "now()" }
+  ],
+  "indexes": [
+    { "columns": ["user_id"] },
+    { "columns": ["animal_id"] },
+    { "columns": ["created_at"] }
+  ]
+}

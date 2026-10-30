@@ -1,0 +1,23 @@
+{
+  "name": "animals",
+  "description": "Koyun sürü varlıkları ve bireysel küpe kayıtları",
+  "columns": [
+    { "name": "id", "type": "uuid", "primary_key": true, "default": "gen_random_uuid()" },
+    { "name": "user_id", "type": "uuid", "nullable": false },
+    { "name": "tag_id", "type": "varchar(32)", "nullable": false, "unique": true },
+    { "name": "breed", "type": "varchar(64)", "nullable": false, "default": "Akkaraman" },
+    { "name": "gender", "type": "varchar(16)", "nullable": false, "default": "Dişi" },
+    { "name": "age_months", "type": "integer", "nullable": false, "default": 24 },
+    { "name": "status", "type": "varchar(32)", "nullable": false, "default": "Gebe Adayı" },
+    { "name": "pen_number", "type": "varchar(32)", "nullable": true, "default": "Ağıl-1" },
+    { "name": "insemination_date", "type": "timestamp with time zone", "nullable": true },
+    { "name": "latest_bcs", "type": "numeric(3,2)", "nullable": true, "default": 3.0 },
+    { "name": "created_at", "type": "timestamp with time zone", "default": "now()" },
+    { "name": "updated_at", "type": "timestamp with time zone", "default": "now()" }
+  ],
+  "indexes": [
+    { "columns": ["user_id"] },
+    { "columns": ["tag_id"] },
+    { "columns": ["status"] }
+  ]
+}
