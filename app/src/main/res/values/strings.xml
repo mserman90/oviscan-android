@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OviScan</string>
+    <string name="app_tagline">Koyun Gebelik Ön Tarama ve Karar Destek Sistemi</string>
+    <string name="legal_disclaimer">DİKKAT: Bu uygulama bir veteriner hekim teşhisi DEĞİLDİR. Yalnızca risk sıralaması yapan bir ön tarama aracıdır. Kesin tanı için veteriner hekim muayenesi (ultrason/PAG) şarttır.</string>
+</resources>

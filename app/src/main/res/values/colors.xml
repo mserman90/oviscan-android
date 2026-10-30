@@ -1,0 +1,18 @@
+<resources>
+    <!-- Field-optimized High Contrast Palette -->
+    <color name="primary">#1B5E20</color>
+    <color name="primary_variant">#003300</color>
+    <color name="secondary">#E65100</color>
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    
+    <!-- Status Colors -->
+    <color name="status_pregnant_high">#2E7D32</color> <!-- High Probability (>70%) -->
+    <color name="status_inconclusive">#F57F17</color>    <!-- Inconclusive (30-70%) -->
+    <color name="status_not_pregnant">#C62828</color>   <!-- Low Probability (<30%) -->
+    
+    <!-- Text and Highlights -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0BEC5</color>
+    <color name="accent_gold">#FFD54F</color>
+</resources>
