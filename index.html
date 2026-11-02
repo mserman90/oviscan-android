@@ -1320,14 +1320,98 @@
                         <div class="eyebrow">// 2. CANLI GEBELİK ÖN TARAMASI (30 SANİYELİK SEANS)</div>
                         <h3 style="font-size:1.15rem; margin-bottom:6px;">Dahili Mikrofon ve İvmeölçerle Gebelik Tespiti</h3>
                         <div style="font-size:0.8rem; color:var(--text-secondary); line-height:1.5;">
-                            <p>• <strong>17 Gün Kuralı (Kızgınlık Döngüsü):</strong> Gebe kalmayan bir koyun koç katımından 16-17 gün sonra tekrar koç arar, huzursuzlaşır ve sık melemeye başlar. 17. günü sakin geçiren ve 25. güne ulaşan koyunlarda gebelik olasılığı hızla artar.</p>
+                            <p>• <strong>17 Gün Kuralı (Kızgınlık Döngüsü):</strong> Gebe kalmayan bir koyun koç katımından 16–17 gün sonra tekrar koç arar, huzursuzlaşır ve sık melemeye başlar. 17. günü sakin geçiren ve 25. güne ulaşan koyunlarda gebelik olasılığı hızla artar.</p>
                             <p style="margin-top:4px;">• <strong>En Doğru Ölçüm Zamanı:</strong> Tohumlamadan sonraki <strong>25. gün ile 45. gün arasıdır</strong>.</p>
-                            <p style="margin-top:4px;">• <strong>Telefonu Tutuş Şekli:</strong> Telefonun alt mikrofonunu koyunun <strong>sol açlık çukuru (işkembe) ve göğüs hizasına 20-30 cm</strong> mesafede tutunuz. <em>"▶ 30 Saniyelik Ölçümü Başlat"</em> butonuna basıp telefonu sallamadan 30 saniye sakin bekleyiniz.</p>
-                            <div style="margin-top:8px; display:flex; flex-direction:column; gap:4px;">
-                                <div>🟢 <strong>Yeşil Kart (>%70):</strong> Gebe olma ihtimali yüksek. Gebe besleme rasyonuna alınız, ikizlik tespiti için veteriner randevusu alınız.</div>
-                                <div>🟡 <strong>Sarı Kart (%30-%70):</strong> Belirsiz/Şüpheli. Hayvanı asla boş saymayınız! 7-10 gün sonra sessiz bir ortamda tekrar ölçünüz.</div>
-                                <div>🔴 <strong>Kırmızı Kart (<%30):</strong> Boş adayı / Koç arama hareketi saptanmış. İkinci tohumlama veya koç katımı takibine alınız.</div>
+                        </div>
+
+                        <!-- ── Telefon Tutma Pozisyonu — ASCII Diyagram ── -->
+                        <div style="margin-top:14px; background:var(--surface-alt); border:1px solid var(--border); border-radius:4px; padding:14px 16px;">
+                            <div class="eyebrow" style="margin-bottom:8px;">// 📱 TELEFonu DOĞRU TUTMA POZİSYONU — KRİTİK BÖLÜM</div>
+                            <pre style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--text-secondary); line-height:1.6; white-space:pre; overflow-x:auto; margin:0;">
+    [SİZ — Sol Eliniz Yatay Tutar]
+              |
+       Ekran size bakıyor
+       ALT KENAR koyuna dönük
+       (mikrofon delikleri aşağıda)
+              |
+              ↓  ←── 20–30 cm ──→  ↓
+      ┌───────────────────────────┐
+      │    KOYUNUN SOL BÖĞRÜ     │
+      │  (Sol Açlık Çukuru /     │
+      │   İŞKEMBE bölgesi)       │
+      └───────────────────────────┘
+
+  ⚠ MUTLAKA SOL böğür — sağ değil!
+  İşkembe sol taraftadır; geviş
+  sesleri oradan yükselir.</pre>
+                        </div>
+
+                        <!-- ── Adım Adım Tutuş Talimatı ── -->
+                        <div style="margin-top:12px; font-size:0.8rem; color:var(--text-secondary); line-height:1.6;">
+                            <p style="font-weight:700; color:var(--text-primary); margin-bottom:6px;">Adım Adım Telefon Tutma Talimatı:</p>
+                            <div style="display:flex; flex-direction:column; gap:5px;">
+                                <div>1️⃣ <strong>ALT kenarı koyuna çevirin</strong> — mikrofon delikleri (şarj girişinin yanı) koyuna bakmalı.</div>
+                                <div>2️⃣ <strong>Sol elinizle yatay tutun</strong> — ekran size bakıyor olmalı; sağ eliniz serbest kalabilir.</div>
+                                <div>3️⃣ <strong>Sol böğür hizasında durun</strong> — koyunun sol tarafına geçin; sağda işkembe sesi zayıf gelir.</div>
+                                <div>4️⃣ <strong>20–30 cm mesafeyi koruyun</strong> — ne çok yakın ne çok uzak; bir kol mesafesi iyi bir ölçek.</div>
+                                <div>5️⃣ <strong>Kamera da böğre baksın</strong> — optik solunum sayımı mikrofon analiziyle eş zamanlı çalışır.</div>
                             </div>
+                        </div>
+
+                        <!-- ── Mesafe Rehberi ── -->
+                        <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+                            <div style="flex:1; min-width:120px; padding:8px 10px; background:var(--status-alert-bg); border:1px solid var(--border); border-radius:4px; font-size:0.72rem; color:var(--text-secondary);">
+                                <div style="font-weight:700; color:var(--status-alert-text);">❌ 5–10 cm (Çok Yakın)</div>
+                                <div style="margin-top:2px;">Yün/kumaş gürültüsü mikrofonu kaplar → Bozuk sonuç</div>
+                            </div>
+                            <div style="flex:1; min-width:120px; padding:8px 10px; background:var(--status-ok-bg); border:1px solid var(--border); border-radius:4px; font-size:0.72rem; color:var(--text-secondary);">
+                                <div style="font-weight:700; color:var(--status-ok-text);">✅ 20–30 cm (İDEAL)</div>
+                                <div style="margin-top:2px;">Geviş ve solunum sesleri net duyulur → Güvenilir sonuç</div>
+                            </div>
+                            <div style="flex:1; min-width:120px; padding:8px 10px; background:var(--status-alert-bg); border:1px solid var(--border); border-radius:4px; font-size:0.72rem; color:var(--text-secondary);">
+                                <div style="font-weight:700; color:var(--status-alert-text);">❌ 50+ cm (Çok Uzak)</div>
+                                <div style="margin-top:2px;">Sinyal zayıflar → Güvenilmez / Sarı kart riski</div>
+                            </div>
+                        </div>
+
+                        <!-- ── Ölçüm Adımları ── -->
+                        <div style="margin-top:14px; background:var(--surface-alt); border:1px solid var(--border); border-radius:4px; padding:12px 14px;">
+                            <div class="eyebrow" style="margin-bottom:8px;">// ÖLÇÜM ADIMLARI (SIRALI TAKİP)</div>
+                            <div style="font-size:0.78rem; color:var(--text-secondary); line-height:1.7; display:flex; flex-direction:column; gap:2px;">
+                                <div><strong>Adım 1:</strong> "⚡ Gebelik" sekmesine girin.</div>
+                                <div><strong>Adım 2:</strong> Açılır listeden koyunun küpe numarasını seçin.</div>
+                                <div><strong>Adım 3:</strong> Mod seçin — <em>Elde Hızlı Tarama (30 sn)</em> veya <em>Tasma / Koşum Kipi (60 sn)</em>.</div>
+                                <div><strong>Adım 4:</strong> <em>"▶ Ölçümü Başlat"</em> düğmesine basın.</div>
+                                <div><strong>Adım 5:</strong> Yeşil dalgalar akarken telefonu <strong>SABİT</strong> tutun — sallamamak kritiktir!</div>
+                                <div><strong>Adım 6:</strong> 30 saniye dolunca telefon hafif titrer (vibrasyon).</div>
+                                <div><strong>Adım 7:</strong> Trafik ışığı rengini ve % ihtimalini okuyun.</div>
+                                <div><strong>Adım 8:</strong> "💾 Sonucu Kaydet" ile hayvan dosyasına yazın.</div>
+                            </div>
+                        </div>
+
+                        <!-- ── Tasma Kipi ── -->
+                        <div style="margin-top:12px; font-size:0.8rem; color:var(--text-secondary); line-height:1.55;">
+                            <p style="font-weight:700; color:var(--text-primary); margin-bottom:4px;">🐑 Tasma / Koşum Kipi — Eller Serbest Kullanım:</p>
+                            <p>Tek başınıza büyük sürüyü hızlıca taramak istiyorsanız: telefonu ince bir bez cebin içine koyun → koyunun <strong>göğüs veya boyun bölgesine</strong> bağlayın → <em>"Tasma / Koşum Kipi (60 sn)"</em> seçin → koyunu sakin bırakın → 60 sn sonra sonucu okuyun. Şüpheli çıkan hayvanları ardından Elde Hızlı Tarama ile doğrulayın.</p>
+                        </div>
+
+                        <!-- ── Sık Yapılan Hatalar ── -->
+                        <div style="margin-top:12px; border-left:3px solid var(--status-alert-text); padding-left:10px; background:var(--status-alert-bg); border-radius:0 4px 4px 0; padding:8px 10px 8px 12px;">
+                            <div style="font-size:0.72rem; font-weight:700; color:var(--status-alert-text); margin-bottom:5px;">⚠️ SIK YAPILAN HATALAR — BUNLARDAN KAÇININ</div>
+                            <div style="font-size:0.75rem; color:var(--text-secondary); line-height:1.6; display:flex; flex-direction:column; gap:3px;">
+                                <div>🚫 <strong>Telefonu sallamak</strong> → İvmeölçer yanlış veri üretir, sonuç bozulur. Bileğinizi sabitleyin.</div>
+                                <div>🚫 <strong>Traktör / köpek gürültüsü</strong> → Mikrofonu bozar. Motoru kapatın veya sakin bölmeye alın.</div>
+                                <div>🚫 <strong>Sağ böğürde ölçüm</strong> → İşkembe sol taraftadır; her zaman sol böğürde durun.</div>
+                                <div>🚫 <strong>Koyunu koşturarak ölçmek</strong> → 5 dk dinlendirin; huzursuz hayvan koç arama davranışı gibi görünür.</div>
+                                <div>🚫 <strong>Rüzgarda dışarıda ölçmek</strong> → Vücudunuzu siper yapın ya da ahıra girin.</div>
+                            </div>
+                        </div>
+
+                        <!-- ── Trafik Işığı ── -->
+                        <div style="margin-top:12px; font-size:0.8rem; color:var(--text-secondary); line-height:1.5; display:flex; flex-direction:column; gap:5px;">
+                            <div>🟢 <strong>Yeşil Kart (&gt;%70):</strong> Gebe olma ihtimali yüksek. Gebe besleme rasyonuna alınız; ikizlik tespiti için veteriner randevusu alınız.</div>
+                            <div>🟡 <strong>Sarı Kart (%30–%70):</strong> Belirsiz / Şüpheli. Hayvanı asla boş saymayınız! 7–10 gün sonra sessiz ortamda tekrar ölçünüz.</div>
+                            <div>🔴 <strong>Kırmızı Kart (&lt;%30):</strong> Boş adayı / Koç arama hareketi saptanmış. İkinci tohumlama veya koç katımı takibine alınız. Veteriner muayenesi olmadan kesime göndermeyiniz!</div>
                         </div>
                     </div>
 

@@ -61,16 +61,143 @@ OviScan, **harici hiçbir ultrason probu, kablo veya cihaz gerektirmeden**, yaln
 * **Neden 25. Günden Sonra?** 17. günü sakin geçiren, geviş ritmi oturan ve dinlenme süresi artan koyunda gebelik ihtimali matematiksel olarak güçlenir.
 * **En İdeal Ölçüm Aralığı:** Tohumlamadan sonraki **25. gün ile 45. gün arasıdır**.
 
-### B. Ahırda 4 Adımda Gebelik Taraması
+---
+
+### B. Ölçüm Öncesi Hazırlık — Ortam ve Hayvan Koşulları
+
+> [!IMPORTANT]
+> Telefon doğru tutulsa bile ortam gürültüsü veya hayvanın huzursuzluğu sonucu bozabilir. Aşağıdaki koşulları sağlamadan ölçüme başlamayın.
+
 ```
-[Adım 1: Sakin Ortam]    --> Traktör, köpek ve yem karma gürültüsünden uzaklaşın.
-[Adım 2: Konumlandırma]  --> Telefon mikrofonunu koyunun sol açlık çukuru (işkembe) 
-                             ve göğüs hizasına 20-30 cm mesafede tutun.
-[Adım 3: 30 sn Ölçüm]    --> "▶ 30 Saniyelik Ölçümü Başlat"a basın ve sabit durun.
-[Adım 4: Karar & Kayıt]  --> Yeşil, Sarı veya Kırmızı sonucu inceleyip kaydedin.
+ÖLÇÜM ÖNCESİ KONTROL LİSTESİ
+═══════════════════════════════════════════════════════════════
+✅  Koyun tohumlanmadan / koç katımından en az 25 gün geçti mi?
+✅  Traktör, yem karma makinesi, köpek — uzakta / kapalı mı?
+✅  Koyun sakin bir bölmede ya da yemlik kenarında mı duruyor?
+✅  Rüzgarlı hava varsa arkam rüzgara dönük mü — telefona siper mi oluyorum?
+✅  Koyunu koşturmadım, en az 5 dakika dinlendirdim mi?
+✅  Telefon sesi kısık, bildirimler "Rahatsız Etme" modunda mı?
+═══════════════════════════════════════════════════════════════
 ```
 
-### C. Sonuçları Okuma (Trafik Işığı Sistemi)
+---
+
+### C. 📱 Telefonu Doğru Tutma Pozisyonu (En Kritik Bölüm)
+
+> [!CAUTION]
+> **Telefonun yanlış tutulması veya sallanması**, ivmeölçerin yanlış veri üretmesine yol açar ve sonuç bozulur. Bu bölümü dikkatlice okuyun.
+
+**Telefonu Hangi Elinizle ve Nasıl Tutacaksınız?**
+
+```
+DOĞRU TUTUŞ DİYAGRAMI (Önden Bakış — Siz Koyunun Sol Yanında Duruyorsunuz)
+════════════════════════════════════════════════════════════════════════════
+
+         [SİZ]
+           |
+   Sol elin avucu      ←── Telefonu YATEYİ tutun
+   ekranı size baksın  ←── Telefonun ALT KENARI koyuna dönük
+           |
+           ↓  20 – 30 cm  ↓
+   ┌───────────────────┐
+   │  KOYUNUN          │
+   │  ← SOL BÖĞRÜ →   │   ← İşkembe / Sol Açlık Çukuru
+   │   (işkembe)       │
+   └───────────────────┘
+
+NOT: Koyunun sağ böğrü değil, MUTLAKA SOL BÖĞRÜ (sol açlık çukuru) kullanılır.
+     İşkembe (büyük mide) sol taraftadır; geviş sesleri buradan yükselir.
+```
+
+**Adım Adım Tutuş Talimatı:**
+
+1. **Telefonun ALT kenarını** (mikrofon delikleri olan kısım) koyunun yönüne çevirin.  
+   → Mikrofon delikleri genellikle telefonun en altındaki şarj girişinin yanındadır.
+
+2. **Sol elinizle telefonu YATAY** tutun; ekran size bakacak şekilde konumlandırın.  
+   → Dikey (portrait) tutmayın — yatay (landscape) tutmanıza gerek yok; önemli olan **ALT MİKROFONUN koyuna bakması**.
+
+3. **Koyunun SOL böğrü (açlık çukuru / işkembe bölgesi)** hizasında durun.  
+   → Koyunun sağ tarafına geçmeyin; işkembe sol taraftadır, geviş ve solunum sesleri oradan gelir.
+
+4. **20 – 30 cm mesafeyi koruyun.**  
+   → Çok yakın (5–10 cm) tutmak koyunun nefes sesini değil kumaş/yün sürtme gürültüsünü alır.  
+   → Çok uzak (50+ cm) tutmak sesi zayıflatır.
+
+5. **Kameranın da koyunun karın / böğür bölgesine bakmasını sağlayın.**  
+   → Optik solunum sayımı (kamera ile) ve akustik analiz (mikrofon ile) eş zamanlı çalışır.
+
+```
+MESAFE REHBERİ
+══════════════════════════════════════════════════════
+  5 – 10 cm   ❌ Çok yakın  → Yün/kumaş gürültüsü baskın
+ 20 – 30 cm   ✅ İDEAL      → Geviş ve solunum net duyulur
+ 50+ cm       ❌ Çok uzak   → Sinyal zayıf, sonuç güvenilmez
+══════════════════════════════════════════════════════
+```
+
+---
+
+### D. Adım Adım Ölçüm Süreci (Numarasıyla Takip Edin)
+
+```
+ADIM 1 ──► Uygulamada "⚡ Gebelik" sekmesine girin
+ADIM 2 ──► Açılır listeden koyunun küpe numarasını seçin
+ADIM 3 ──► Mod seçin:
+           • "Elde Hızlı Tarama (30 sn)" — ahırda bizzat tutacaksanız
+           • "Tasma / Koşum Kipi (60 sn)"— telefonu bez ceple koyunun
+             boynuna / göğsüne bağlayacaksanız
+ADIM 4 ──► "▶ Ölçümü Başlat" düğmesine basın
+ADIM 5 ──► Ekranda yeşil dalgalar akarken telefonu SABİT TUTUN
+           (sallamamak çok önemli — ivmeölçer hareketi kaydeder!)
+ADIM 6 ──► 30 saniye sonra telefon hafifçe titrer (vibrasyon)
+ADIM 7 ──► Trafik ışığı rengini ve % ihtimalini okuyun
+ADIM 8 ──► "💾 Sonucu Kaydet" butonuna basarak hayvan dosyasına yazın
+```
+
+---
+
+### E. Tasma / Koşum Kipi — Eller Serbest Kullanım
+
+Koyunları tek tek tutarken yardımcınız yoksa veya büyük bir sürüyü hızlıca taramak istiyorsanız **Tasma Kipini** kullanabilirsiniz:
+
+1. Telefonunuzu ince bir bez cebe veya nefes alabilir küçük bir kese içine koyun.
+2. Cebi koyunun **göğüs bölgesine** ya da **boynuna** bağlayın (tasma veya kayışla).
+3. Uygulamada **"Tasma / Koşum Kipi (60 sn)"** seçeneğini seçin.
+4. Koyunu sakin bir bölmede bırakın; 60 saniye boyunca dinlenmesine izin verin.
+5. Süre bitince telefonu alıp sonucu okuyun.
+
+> **İpucu:** Tasma kipinde mikrofon tam böğre değil, göğüs bölgesine yakın olur. Sonuçlar biraz daha genel olabilir; şüpheli çıkan hayvanları "Elde Hızlı Tarama" ile bir kez daha ölçün.
+
+---
+
+### F. Sık Yapılan Hatalar ve Nasıl Önlenir?
+
+```
+HATA                    │ SONUCA ETKİSİ            │ ÇÖZÜM
+────────────────────────┼──────────────────────────┼──────────────────────────
+Telefonu sallamak       │ İvmeölçer yanlış veri    │ Bileği sabitleyin,
+                        │ üretir → Sarı/Kırmızı    │ dirsekle destekleyin
+────────────────────────┼──────────────────────────┼──────────────────────────
+Traktör/köpek gürültüsü │ Mikrofon arka plan       │ Motoru kapatın veya
+                        │ sesle dolar → Düşük skor │ sakin bölmeye geçin
+────────────────────────┼──────────────────────────┼──────────────────────────
+Sağ böğür yerine sağ    │ Geviş sesi zayıf gelir   │ Koyunun sol tarafına
+tarafta ölçüm           │                          │ geçin
+────────────────────────┼──────────────────────────┼──────────────────────────
+Koyunu koşturarak       │ Huzursuzluk koç arama    │ 5 dk dinlendirin,
+hemen ölçmek            │ davranışıyla karışır     │ sonra ölçün
+────────────────────────┼──────────────────────────┼──────────────────────────
+5 cm'den yakın tutmak   │ Yün/kumaş gürültüsü      │ 20-30 cm mesafeyi
+                        │ mikrofonla yarışır        │ koruyun
+────────────────────────┼──────────────────────────┼──────────────────────────
+Rüzgarda dışarıda       │ Rüzgar mikrofona çarpar  │ Vücudunuzu siper yapın
+ölçmek                  │ → Yanlış sonuç           │ ya da ahıra girin
+```
+
+---
+
+### G. Sonuçları Okuma (Trafik Işığı Sistemi)
 * 🟢 **YEŞİL KART (Gebe Olma Olasılığı Yüksek > %70):**  
   Hayvan 17 günlük kızgınlık evresini sakin aşmış; geviş akustikleri düzenli ve meleme atağı yoktur.  
   *Çiftçi Ne Yapmalı?* Hayvanı gebe besleme rasyonuna alınız. Yavru sayısını (tekiz/ikiz) tescil etmek için veteriner hekiminize ultrason randevusu alınız.
