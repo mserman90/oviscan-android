@@ -65,6 +65,9 @@ OviScan, **harici hiçbir ultrason probu, kablo veya cihaz gerektirmeden**, yaln
 
 ### B. Ölçüm Öncesi Hazırlık — Ortam ve Hayvan Koşulları
 
+![Ölçüm için ideal sakin ahır ortamı — koyun yemlik başında dinleniyor](images/calm-barn-environment.jpg)
+*📸 İdeal ölçüm ortamı: Sakin, gürültüsüz, koyunun yemlik kenarında huzurla durduğu bir bölme.*
+
 > [!IMPORTANT]
 > Telefon doğru tutulsa bile ortam gürültüsü veya hayvanın huzursuzluğu sonucu bozabilir. Aşağıdaki koşulları sağlamadan ölçüme başlamayın.
 
@@ -86,6 +89,12 @@ OviScan, **harici hiçbir ultrason probu, kablo veya cihaz gerektirmeden**, yaln
 
 > [!CAUTION]
 > **Telefonun yanlış tutulması veya sallanması**, ivmeölçerin yanlış veri üretmesine yol açar ve sonuç bozulur. Bu bölümü dikkatlice okuyun.
+
+![Çiftçi telefonu koyunun sol böğrü hizasında yatay tutuyor — doğru pozisyon](images/phone-holding-correct.jpg)
+*📸 Doğru pozisyon: Sol elde yatay tutulan telefon, ekran çiftçiye bakıyor, alt kenar (mikrofon) koyunun sol böğrüne dönük, mesafe ~25 cm.*
+
+![Koyunun sol böğrüne yakın çekim — mikrofon hizalama detayı](images/phone-holding-closeup.jpg)
+*📸 Yakın plan: Telefon alt kenarının (mikrofon deliklerinin) koyunun sol açlık çukuru (işkembe) bölgesine dönük tutulması.*
 
 **Telefonu Hangi Elinizle ve Nasıl Tutacaksınız?**
 
@@ -135,6 +144,9 @@ MESAFE REHBERİ
  50+ cm       ❌ Çok uzak   → Sinyal zayıf, sonuç güvenilmez
 ══════════════════════════════════════════════════════
 ```
+
+![Yanlış (çok yakın) ve doğru (20–30 cm) mesafe karşılaştırması](images/distance-comparison.jpg)
+*📸 Sol: Telefon yüne değecek kadar yakın — yanlış. Sağ: ~25 cm ideal mesafede tutma — doğru.*
 
 ---
 
@@ -215,6 +227,10 @@ Rüzgarda dışarıda       │ Rüzgar mikrofona çarpar  │ Vücudunuzu siper
 Bu modül, telefon kamerasıyla çektiğiniz tek bir fotoğraftan koyunun besleme durumunu ve ayak sağlığını yapay zeka ile inceler.
 
 ### A. Fotoğrafı Nasıl Çekmelisiniz?
+
+![BCS analizi için doğru fotoğraf açısı — çiftçi koyunun arka-yan açısından 1.5m mesafede çekiyor](images/bcs-photo-angle.jpg)
+*📸 Doğru BCS fotoğraf açısı: Koyunun hafif arka-yan açısından (~1.5 m mesafede), omurga hattı ve böğür boşluğu görünecek şekilde çekin.*
+
 1. Koyunun **yan ve hafif çapraz arka açısından** (omurga hattı, lumbosakral bel bölgesi ve böğür çukurluğu net görünecek şekilde) durunuz.
 2. Yaklaşık 1.5 - 2 metre mesafeden, gün ışığında veya iyi aydınlatılmış ahırda net bir fotoğraf çekiniz.
 3. İster canlı kameradan çekebilir, ister albümden yükleyebilir, isterseniz sistemdeki **3 Örnek Fotoğrafı (İdeal, Zayıf, Topallık)** seçerek hemen deneyebilirsiniz.
